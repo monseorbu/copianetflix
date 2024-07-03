@@ -1,0 +1,257 @@
+.title {
+    letter-spacing: 3px;
+    font-size: 50px;
+}
+
+.titulo {
+    letter-spacing: 3px;
+    font-size: 43px;
+}
+
+:root {
+    --rojo: #E50914;
+    --fondo: #141414;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--fondo);
+        font-family: "Open Sans", sans-serif;
+      }
+
+
+.contenedor {
+    width: 90%;
+    margin: auto;
+}
+
+header {
+    padding: 8px 0;
+}
+
+header .contenedor {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logotipo {
+    font-family: "Bebas Neue", cursive;
+    font-weight: normal;
+    color: var(--rojo);
+    font-size: 50px;
+}
+
+header nav a {
+    color: #AAA;
+    text-decoration: none;
+    margin-right: 20px;
+}
+
+header nav a:hover,
+header nav a.activo {
+    color: #FFF;
+}
+
+/*Película principal*/
+
+.película-principal {
+    font-size: 16px;
+    min-height: 30.62em;
+    color: #fff;
+    background: linear-gradient(rgba(0, 0, 0, .50) 0%, rgba(0, 0, 0, .50) 100%), url(images/1.jpg);
+    background-position: center center;
+    background-size: cover;
+    margin-bottom: 5.12em;
+    display: flex;
+    align-items: end;
+}
+
+.película-principal .contenedor {
+    margin: 0 auto;
+    margin-bottom: 6.25em;
+}
+
+.película-principal .título {
+    font-weight: 600;
+    font-size: 3.12em;
+    margin-bottom: 0.4px;
+}
+
+.película-principal .descripción {
+    font-size: normal;
+    font-size: 1em;
+    line-height: 1.75em;
+    max-width: 50%;
+    margin-bottom: 1em;
+}
+
+.película-principal .boton {
+    display: inline-flex;
+    background: rgba(0, 0, 0, 0.5);
+    border: none;
+    border-radius: 0.31em;
+    padding: 0.93em 1.87em;
+    color: #fff;
+    margin-right: 1.12em ;
+    cursor: pointer;
+    transition: .3s ease all;
+    font-size: 1.12em;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0em;
+}
+
+.película-principal .boton:hover {
+    background: #fff;
+    color: #000;
+}
+
+.película-principal .boton i {
+    margin-right: 1.12em;
+}
+
+/*Contenedor título y controles*/
+.contenedor-título-controles {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+}
+
+.contenedor-título-controles h1 {
+    color: #fff;
+    font-size: 25px;
+}
+
+.contenedor-título-controles .indicadores button {
+    background: #fff;
+    height: 3px;
+    width: 10px;
+    cursor: pointer;
+    border: none;
+    margin-right: 2px;
+}
+
+.contenedor-título-controles .indicadores button:hover,
+.contenedor-título-controles .indicadores button.activo {
+    background: red;
+}
+
+/*Contenedor principal y felchas*/
+.películas-recomendadas {
+    margin-bottom: 60px;
+}
+
+.películas-recomendadas .contenedor-principal {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.películas-recomendadas .contenedor-principal .flecha-izquierda,
+.películas-recomendadas .contenedor-principal .flecha-derecha {
+    position: absolute;
+    border: none;
+    background: rgba(0, 0, 0, .3);
+    font-size: 40px;
+    height: 50%;
+    top: calc(50% - 25%);
+    line-height: 40px;
+    width: 50px;
+    color: #fff;
+    cursor: pointer;
+    z-index: 500;
+    transition: .2s ease all;
+}
+
+.películas-recomendadas .contenedor-principal .flecha-izquierda {
+    left: 0;
+}
+
+.películas-recomendadas .contenedor-principal .flecha-derecha {
+    right: 0;
+}
+
+.películas-recomendadas .contenedor-principal .flecha-izquierda:hover,
+.películas-recomendadas .contenedor-principal .flecha-derecha:hover {
+    background: rgba(0, 0, 0, .9);
+}
+
+/*Carousel*/
+.películas-recomendadas .contenedor-carousel {
+    width: 100%;
+    padding: 20px 0;
+    overflow: hidden;
+    scroll-behavior: smooth;
+    display: flex;
+}
+
+.películas-recomendadas .contenedor-carousel .carousel{
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.películas-recomendadas .contenedor-carousel .carousel .película {
+    min-width: 20%;
+    transition: .3s ease all;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, .3);
+}
+
+.películas-recomendadas .contenedor-carousel .carousel .película:hover {
+    transform: scale(1.2);
+    transform-origin: center;
+}
+
+.películas-recomendadas .contenedor-carousel .carousel .película img {
+    width: 100%;
+    vertical-align: top;
+}
+
+.contenedor-carousel img {
+    width: 150px;
+    height: 300px;
+}
+
+/*Media Queries*/
+@media screen and (max-width: 800px) {
+    header .logo {
+        margin-bottom: 10px;
+        font-size: 30px;
+    }
+
+    header .contenedor {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .película-principal{
+        font-size: 14px;
+    }
+
+    .película-principal .descripción {
+        max-width: 100%;
+    }
+
+    .películas-recomendadas .contenedor-carousel {
+        overflow: visible;
+    }
+
+    .películas-recomendadas .contenedor-carousel .carousel {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+
+    .películas-recomendadas .indicadores,
+    .películas-recomendadas .flecha-izquierda,
+    .películas-recomendadas .flecha-derecha {
+        display: none;
+    }
+}
+
+
